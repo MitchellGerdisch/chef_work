@@ -1,5 +1,5 @@
 #
-# Cookbook Name:: webgreeter
+# Cookbook Name:: turner
 # Recipe:: default
 #
 # Copyright (C) 2014 YOUR_NAME
@@ -14,7 +14,13 @@ directory '/etc/httpd/htdocs' do
 	action	:create
 end
 
+cookbook_file '/etc/httpd/htdocs/turner.jpg' do
+  source '/turner.jpg'
+  mode '0444'
+end
+
 template '/etc/httpd/htdocs/index.html' do
   source 'index.html.erb'
+  mode '0444'
 end
 
