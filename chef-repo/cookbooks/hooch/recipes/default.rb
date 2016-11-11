@@ -7,19 +7,19 @@
 # All rights reserved - Do Not Redistribute
 #
 
-directory '/etc/httpd/htdocs' do
+directory '/etc/apache2/htdocs' do
 	owner 'root'
 	group 'root'
 	mode '0755'
 	action	:create
 end
 
-cookbook_file '/etc/httpd/htdocs/hooch.jpg' do
+cookbook_file '/etc/apache2/htdocs/hooch.jpg' do
   source '/hooch.jpg'
   mode '0444'
 end
 
-template '/etc/httpd/htdocs/index.html' do
+template '/etc/apache2/htdocs/index.html' do
   source 'index.html.erb'
   mode '0444'
 end
